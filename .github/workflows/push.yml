@@ -1,0 +1,8 @@
+name: Move asana ticket to 'in progress' on first push of branch
+
+on: push
+
+jobs:
+  capture_commits:
+    runs-on: ubuntu-latest
+    if: github.run_number == 1

@@ -1,0 +1,12 @@
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+
+# Environment
+.env
+
+# Directories
+dist/
+node_modules/

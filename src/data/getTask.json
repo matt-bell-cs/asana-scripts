@@ -1,0 +1,481 @@
+{
+  "gid": "1206949850535673",
+  "actual_time_minutes": null,
+  "assignee": {
+    "gid": "1205008761804138",
+    "name": "Matt Bell"
+  },
+  "assignee_status": "inbox",
+  "assignee_section": {
+    "gid": "1205009039749934",
+    "name": "Recently assigned"
+  },
+  "completed": false,
+  "completed_at": null,
+  "completed_by": null,
+  "created_at": "2024-03-28T11:51:03.638Z",
+  "created_by": {
+    "gid": "1204914903543896",
+    "resource_type": "user"
+  },
+  "custom_fields": [
+    {
+      "gid": "1200521880340549",
+      "enabled": true,
+      "enum_options": [
+        {
+          "gid": "1200521880340550",
+          "color": "red",
+          "enabled": true,
+          "name": "Must have"
+        },
+        {
+          "gid": "1200521880340551",
+          "color": "yellow",
+          "enabled": true,
+          "name": "Should have"
+        },
+        {
+          "gid": "1200521880340552",
+          "color": "green",
+          "enabled": true,
+          "name": "Could have"
+        }
+      ],
+      "enum_value": {
+        "gid": "1200521880340551",
+        "color": "yellow",
+        "enabled": true,
+        "name": "Should have"
+      },
+      "has_notifications_enabled": false,
+      "name": "MoSCoW",
+      "description": "",
+      "created_by": {
+        "gid": "1200252462046587",
+        "name": "Coen van der Poll"
+      },
+      "display_value": "Should have",
+      "resource_subtype": "enum",
+      "is_formula_field": false,
+      "is_value_read_only": false,
+      "type": "enum"
+    },
+    {
+      "gid": "1202196020888213",
+      "enabled": true,
+      "enum_options": [
+        {
+          "gid": "1202196020888284",
+          "color": "red",
+          "enabled": true,
+          "name": "Bug"
+        },
+        {
+          "gid": "1202196020892541",
+          "color": "purple",
+          "enabled": true,
+          "name": "Chore"
+        },
+        {
+          "gid": "1202196020892575",
+          "color": "blue",
+          "enabled": true,
+          "name": "Feature"
+        }
+      ],
+      "enum_value": {
+        "gid": "1202196020892575",
+        "color": "blue",
+        "enabled": true,
+        "name": "Feature"
+      },
+      "has_notifications_enabled": false,
+      "name": "Classification",
+      "description": "Classifies tasks as bug (application doesn't work as expected, needs fixing), feature (add or change behaviour of the application) or chore (just work to be done).",
+      "created_by": {
+        "gid": "1200054582530089",
+        "name": "Koen Lageveen"
+      },
+      "display_value": "Feature",
+      "resource_subtype": "enum",
+      "is_formula_field": false,
+      "is_value_read_only": false,
+      "type": "enum"
+    },
+    {
+      "gid": "1200521695566375",
+      "enabled": true,
+      "name": "Estimates",
+      "description": "",
+      "number_value": 1,
+      "precision": 0,
+      "format": "none",
+      "currency_code": null,
+      "custom_label": null,
+      "created_by": {
+        "gid": "1200252462046587",
+        "name": "Coen van der Poll"
+      },
+      "custom_label_position": null,
+      "display_value": "1",
+      "resource_subtype": "number",
+      "is_formula_field": false,
+      "is_value_read_only": false,
+      "type": "number"
+    },
+    {
+      "gid": "1205364602827409",
+      "enabled": true,
+      "enum_options": [
+        {
+          "gid": "1205364602827410",
+          "color": "red",
+          "enabled": true,
+          "name": "High"
+        },
+        {
+          "gid": "1205364602827411",
+          "color": "yellow",
+          "enabled": true,
+          "name": "Medium"
+        },
+        {
+          "gid": "1205364602827412",
+          "color": "green",
+          "enabled": true,
+          "name": "Low"
+        }
+      ],
+      "enum_value": null,
+      "has_notifications_enabled": false,
+      "name": "Priority",
+      "description": "Track the priority of each task.",
+      "created_by": {
+        "gid": "1200253327351479",
+        "name": "Ivo van der Ent"
+      },
+      "display_value": null,
+      "resource_subtype": "enum",
+      "is_formula_field": false,
+      "is_value_read_only": false,
+      "type": "enum"
+    },
+    {
+      "gid": "1206371429061134",
+      "enabled": true,
+      "enum_options": [
+        {
+          "gid": "1206371429061135",
+          "color": "purple",
+          "enabled": true,
+          "name": "FE"
+        },
+        {
+          "gid": "1206371429061136",
+          "color": "indigo",
+          "enabled": true,
+          "name": "BE"
+        },
+        {
+          "gid": "1206371429061137",
+          "color": "aqua",
+          "enabled": true,
+          "name": "Skyway"
+        },
+        {
+          "gid": "1206564658638923",
+          "color": "red",
+          "enabled": true,
+          "name": "Devops"
+        },
+        {
+          "gid": "1206564658638924",
+          "color": "orange",
+          "enabled": true,
+          "name": "New Dashboard"
+        },
+        {
+          "gid": "1206564658638925",
+          "color": "yellow-orange",
+          "enabled": true,
+          "name": "Client fastlane"
+        },
+        {
+          "gid": "1206564658638926",
+          "color": "yellow",
+          "enabled": true,
+          "name": "Partner integrations"
+        },
+        {
+          "gid": "1206564658638927",
+          "color": "yellow-green",
+          "enabled": true,
+          "name": "New Orderflow"
+        },
+        {
+          "gid": "1206564658638928",
+          "color": "green",
+          "enabled": true,
+          "name": "API"
+        },
+        {
+          "gid": "1206564665710502",
+          "color": "blue-green",
+          "enabled": true,
+          "name": "Digital signage"
+        },
+        {
+          "gid": "1206564116866411",
+          "color": "blue",
+          "enabled": true,
+          "name": "Tooling"
+        },
+        {
+          "gid": "1206564881975738",
+          "color": "cool-gray",
+          "enabled": true,
+          "name": "unclassified"
+        },
+        {
+          "gid": "1206564288853558",
+          "color": "none",
+          "enabled": true,
+          "name": "Dev Roadmap"
+        },
+        {
+          "gid": "1207231432838832",
+          "color": "magenta",
+          "enabled": true,
+          "name": "Query builder & data"
+        },
+        {
+          "gid": "1207231218906475",
+          "color": "hot-pink",
+          "enabled": true,
+          "name": "Mailings"
+        },
+        {
+          "gid": "1207231411530024",
+          "color": "pink",
+          "enabled": true,
+          "name": "UX improvements"
+        }
+      ],
+      "multi_enum_values": [
+        {
+          "gid": "1206371429061135",
+          "color": "purple",
+          "enabled": true,
+          "name": "FE"
+        },
+        {
+          "gid": "1206564881975738",
+          "color": "cool-gray",
+          "enabled": true,
+          "name": "unclassified"
+        }
+      ],
+      "name": "Keywords",
+      "description": "",
+      "created_by": {
+        "gid": "1200054582530089",
+        "name": "Koen Lageveen"
+      },
+      "display_value": "FE, unclassified",
+      "resource_subtype": "multi_enum",
+      "is_formula_field": false,
+      "is_value_read_only": false,
+      "type": "multi_enum"
+    },
+    {
+      "gid": "1200825419263040",
+      "enabled": true,
+      "enum_options": [
+        {
+          "gid": "1206094422516934",
+          "color": "hot-pink",
+          "enabled": true,
+          "name": "Selinde"
+        },
+        {
+          "gid": "1206094422516935",
+          "color": "green",
+          "enabled": true,
+          "name": "John"
+        },
+        {
+          "gid": "1206865896723467",
+          "color": "yellow",
+          "enabled": true,
+          "name": "Michelle"
+        },
+        {
+          "gid": "1207054592007208",
+          "color": "orange",
+          "enabled": true,
+          "name": "Liam"
+        },
+        {
+          "gid": "1206751923058758",
+          "color": "aqua",
+          "enabled": true,
+          "name": "Frank"
+        },
+        {
+          "gid": "1200825419263044",
+          "color": "orange",
+          "enabled": true,
+          "name": "Kelly"
+        },
+        {
+          "gid": "1205314775807171",
+          "color": "cool-gray",
+          "enabled": true,
+          "name": "Soph"
+        },
+        {
+          "gid": "1200825419263043",
+          "color": "yellow-orange",
+          "enabled": true,
+          "name": "Liesanne"
+        },
+        {
+          "gid": "1206336878549127",
+          "color": "blue-green",
+          "enabled": true,
+          "name": "Kadri"
+        },
+        {
+          "gid": "1200957617088881",
+          "color": "yellow-green",
+          "enabled": true,
+          "name": "Ivo"
+        },
+        {
+          "gid": "1206094422516936",
+          "color": "magenta",
+          "enabled": true,
+          "name": "Skye"
+        },
+        {
+          "gid": "1206580982098996",
+          "color": "red",
+          "enabled": true,
+          "name": "Jamie"
+        }
+      ],
+      "enum_value": null,
+      "has_notifications_enabled": false,
+      "name": "CS Lead",
+      "description": "",
+      "created_by": {
+        "gid": "1200259620817072",
+        "name": "Liesanne"
+      },
+      "display_value": null,
+      "resource_subtype": "enum",
+      "is_formula_field": false,
+      "is_value_read_only": false,
+      "type": "enum"
+    },
+    {
+      "gid": "1207192678466890",
+      "enabled": true,
+      "name": "DEV",
+      "description": "",
+      "created_by": {
+        "gid": "1200054582530089",
+        "name": "Koen Lageveen"
+      },
+      "display_value": "DEV-17",
+      "resource_subtype": "text",
+      "text_value": "DEV-17",
+      "is_formula_field": false,
+      "is_value_read_only": true,
+      "type": "text"
+    }
+  ],
+  "dependencies": [],
+  "dependents": [],
+  "due_at": null,
+  "due_on": null,
+  "followers": [
+    {
+      "gid": "1204914903543896",
+      "name": "Stu Mileham"
+    },
+    {
+      "gid": "1205008761804138",
+      "name": "Matt Bell"
+    }
+  ],
+  "hearted": false,
+  "hearts": [],
+  "html_notes": "<body>We should remove the hideTagline parameter from the brochure layout to get rid of the inconsistencies between the different Agenda layout types.\n\nThis is dependant upon whether clients actually need/want it.\n\nSee <a href=\"https://app.asana.com/0/1200253181877713/1206279366290363\" data-asana-gid=\"1206279366290363\" data-asana-accessible=\"true\" data-asana-type=\"task\" data-asana-project=\"1200253181877713\" data-asana-dynamic=\"true\">✓ FE: Tagline in brochure layout - redesign</a> for more details</body>",
+  "is_rendered_as_separator": false,
+  "liked": false,
+  "likes": [],
+  "memberships": [
+    {
+      "project": {
+        "gid": "1200490420490948",
+        "name": "Roadmap"
+      },
+      "section": {
+        "gid": "1204192386010676",
+        "name": "Ready to plan for sprint"
+      }
+    },
+    {
+      "project": {
+        "gid": "1206863278357196",
+        "name": "DEV v195 (13-05)"
+      },
+      "section": {
+        "gid": "1206878841655134",
+        "name": "Code review"
+      }
+    },
+    {
+      "project": {
+        "gid": "1207053849236284",
+        "name": "DEV v196 (03-06)"
+      },
+      "section": {
+        "gid": "1207062400996093",
+        "name": "FE CS tickets & projects"
+      }
+    }
+  ],
+  "modified_at": "2024-05-06T13:59:49.274Z",
+  "name": "Remove hideTagline parameter for brochure layout",
+  "notes": "We should remove the hideTagline parameter from the brochure layout to get rid of the inconsistencies between the different Agenda layout types.\n\nThis is dependant upon whether clients actually need/want it.\n\nSee https://app.asana.com/0/1200253181877713/1206279366290363 for more details",
+  "num_hearts": 0,
+  "num_likes": 0,
+  "num_subtasks": 0,
+  "parent": null,
+  "permalink_url": "https://app.asana.com/0/1200490420490948/1206949850535673",
+  "projects": [
+    {
+      "gid": "1200490420490948",
+      "name": "Roadmap"
+    },
+    {
+      "gid": "1206863278357196",
+      "name": "DEV v195 (13-05)"
+    },
+    {
+      "gid": "1207053849236284",
+      "name": "DEV v196 (03-06)"
+    }
+  ],
+  "start_at": null,
+  "start_on": null,
+  "tags": [],
+  "resource_subtype": "default_task",
+  "workspace": {
+    "gid": "1199888618790669",
+    "name": "CultureSuite"
+  }
+}

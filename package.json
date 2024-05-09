@@ -1,0 +1,30 @@
+{
+  "name": "asana-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build --debug",
+    "preview": "vite preview",
+    "release": "standard-version --skip.changelog && git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-bell-cs/asana-scripts.git"
+  },
+  "author": "Matt Bell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matt-bell-cs/asana-scripts/issues"
+  },
+  "homepage": "https://github.com/matt-bell-cs/asana-scripts#readme",
+  "dependencies": {
+    "asana": "^3.0.4",
+    "vite": "^5.2.11"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  }
+}

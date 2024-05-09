@@ -1,0 +1,9 @@
+.*
+.*.json
+
+public/
+src/
+
+index.html
+vite.config.js
+tsconfig.json
