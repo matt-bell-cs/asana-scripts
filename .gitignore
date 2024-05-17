@@ -8,5 +8,4 @@
 .env
 
 # Directories
-dist/
 node_modules/
