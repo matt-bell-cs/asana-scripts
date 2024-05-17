@@ -52247,27 +52247,32 @@ async function run() {
         const asanaWorkspaceId = core.getInput('asana-workspace-id');
         const branch = core.getInput('branch');
         const commit = core.getInput('commit');
-        const ticketAction = core.getInput('ticket-action');
+        const ticketAction = core.getInput('ticket-section');
         const asanaClient = new asana_1.default(asanaAccessToken, asanaWorkspaceId);
         const vcsData = {
             branch,
             commit,
         };
         const ticketIds = await asanaClient.parseBranchAndCommit(vcsData);
-        ticketIds.forEach((ticketId) => {
-            if (ticketAction === 'in progress') {
-                asanaClient.taskInProgress(ticketId);
+        for (const ticketId of ticketIds) {
+            switch (ticketAction) {
+                case 'in progress':
+                    await asanaClient.taskInProgress(ticketId);
+                    break;
+                case 'code review':
+                    await asanaClient.taskToCodeReview(ticketId);
+                    break;
+                case 'complete':
+                    await asanaClient.taskComplete(ticketId);
+                    break;
+                default:
+                    core.warning(`Unsupported ticket action: ${ticketAction}`);
             }
-            if (ticketAction === 'code review') {
-                asanaClient.taskToCodeReview(ticketId);
-            }
-            if (ticketAction === 'complete') {
-                asanaClient.taskComplete(ticketId);
-            }
-        });
+        }
+        core.info('Asana tasks updated successfully.');
     }
     catch (error) {
-        core.setFailed(error.message);
+        core.setFailed(`Error updating Asana tasks: ${error.message}`);
     }
 }
 run();
