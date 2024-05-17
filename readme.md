@@ -40,8 +40,8 @@ jobs:
         with:
           asana-access-token: ${{ secrets.ASANA_ACCESS_TOKEN }}
           asana-workspace-id: ${{ secrets.CULTURE_SUITE_ASANA_WORKSPACE_ID }}
-          branch: ${{ github.ref }}
-          commit: ${{ github.event.head_commit.message }}
+          branch: ${{ github.event.pull_request.head.ref || github.ref }}
+          commit: ${{ github.event.head_commit.message || github.event.pull_request.body }}
           ticket-section: ${{ github.event.action == 'opened' && 'code review' || github.event.action == 'closed' && 'complete' || 'in progress' }}
 ```
 
