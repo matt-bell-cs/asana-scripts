@@ -23,7 +23,7 @@ export default ({ mode }) => {
       lib: {
         entry: resolve(__dirname, 'src/lib/index.ts'),
         fileName: 'index',
-        formats: ['es'],
+        formats: ['cjs'],
       },
       outDir: 'dist',
       emptyOutDir: true,
