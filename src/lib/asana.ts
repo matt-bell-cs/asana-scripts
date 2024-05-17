@@ -1,9 +1,15 @@
 import * as asana from 'asana'
 
+type GitData = {
+  branch: string
+  commit: string
+}
+
 class AsanaClient {
   private client: asana.ApiClient
   private tasksApiInstance: asana.TasksApi
   private sectionsApiInstance: asana.SectionsApi
+  private workspaceId: string
 
   constructor(asanaAccessToken: string) {
     this.client = asana.ApiClient.instance
@@ -11,6 +17,7 @@ class AsanaClient {
     token.accessToken = asanaAccessToken
     this.tasksApiInstance = new asana.TasksApi()
     this.sectionsApiInstance = new asana.SectionsApi()
+    this.workspaceId = '1199888618790669'
   }
 
   private async getTask(gid: string) {
@@ -113,6 +120,88 @@ class AsanaClient {
       section.name.startsWith(name)
     )
     return activeSection ? activeSection.gid : ''
+  }
+
+  private async getGidFromCustomId(id: string): Promise<string> {
+    try {
+      const result = await this.tasksApiInstance.getTaskForCustomID(
+        this.workspaceId,
+        id
+      )
+      console.log('Asana task found', result.data)
+      return result.data.gid
+    } catch (error: any) {
+      console.error('Error:', error.response.body)
+      throw new Error('Failed to retrieve task: ' + error.message)
+    }
+  }
+
+  private async getIdFromBranch(branch: string): Promise<string | null> {
+    const sections = branch.toLowerCase().split('/')
+    const customId = sections
+      .find((section) => section.startsWith('dev-'))
+      ?.toUpperCase()
+    if (customId) {
+      return await this.getGidFromCustomId(customId)
+    }
+    return null
+  }
+
+  private async getIdsFromCommit(commitMessage: string): Promise<string[]> {
+    const gids: string[] = []
+
+    // Find Asana URLs
+    const asanaLinkMatches = commitMessage.match(/app\.asana\.com\/[^\s]+/g)
+    if (asanaLinkMatches) {
+      const asanaLinkGids = asanaLinkMatches
+        .map((link) => {
+          const match = link.match(/\/(\d+)(?:\/f)?$/)
+          return match ? match[1] : null
+        })
+        .filter((gid) => gid !== null) as string[]
+      gids.push(...asanaLinkGids)
+    }
+
+    // Find custom ID references
+    const customIdPattern = /\bdev-\d+\b/gi
+    const matches = commitMessage.match(customIdPattern)
+    if (matches) {
+      const customIds = matches.map((id) => id.toUpperCase())
+      for (const id of customIds) {
+        const gid = await this.getGidFromCustomId(id)
+        if (gid) {
+          gids.push(gid)
+        }
+      }
+    }
+
+    return gids
+  }
+
+  private async searchForTicketIds({
+    branch,
+    commit,
+  }: GitData): Promise<string[]> {
+    const asanaIds: string[] = []
+
+    const branchGid = await this.getIdFromBranch(branch)
+    if (branchGid) {
+      asanaIds.push(branchGid)
+    }
+
+    const commitGids = await this.getIdsFromCommit(commit)
+    asanaIds.push(...commitGids)
+
+    return Array.from(new Set(asanaIds))
+  }
+
+  public async parseBranchAndCommit({
+    branch,
+    commit,
+  }: GitData): Promise<string[]> {
+    // Unique list of ticket IDs from either commit message URLs or branch name custom ID
+    const ticketsToUpdate = await this.searchForTicketIds({ branch, commit })
+    return ticketsToUpdate
   }
 
   public async taskInProgress(task_gid: string): Promise<void> {
