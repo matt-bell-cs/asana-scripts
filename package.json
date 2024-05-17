@@ -1,6 +1,6 @@
 {
   "name": "asana-task-updater",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "dist/index.js",
   "exports": {
@@ -14,7 +14,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "release": "build && standard-version --skip.changelog && git push --follow-tags"
+    "release": "pnpm run build && standard-version --skip.changelog && git push --follow-tags"
   },
   "repository": {
     "type": "git",
