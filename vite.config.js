@@ -28,7 +28,6 @@ export default ({ mode }) => {
       outDir: 'dist',
       emptyOutDir: true,
       rollupOptions: {
-        external: ['@actions/core'],
         output: {
           entryFileNames: '[name].js',
         },
