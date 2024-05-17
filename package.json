@@ -1,6 +1,6 @@
 {
   "name": "asana-task-updater",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "",
   "main": "dist/index.js",
   "exports": {
@@ -14,7 +14,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "release": "pnpm run build && standard-version --skip.changelog && git push --follow-tags",
+    "release": "standard-version --skip.changelog && git push --follow-tags",
     "package": "npx ncc build src/lib/index.ts"
   },
   "repository": {
