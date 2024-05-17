@@ -14,7 +14,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "release": "pnpm run build && standard-version --skip.changelog && git push --follow-tags"
+    "release": "pnpm run build && standard-version --skip.changelog && git push --follow-tags",
+    "package": "npx ncc build src/lib/index.ts"
   },
   "repository": {
     "type": "git",
@@ -23,10 +24,11 @@
   "author": "Matt Bell",
   "homepage": "https://github.com/matt-bell-cs/asana-scripts#readme",
   "dependencies": {
-    "asana": "^3.0.4",
-    "@actions/core": "^1.10.1"
+    "@actions/core": "^1.10.1",
+    "asana": "^3.0.4"
   },
   "devDependencies": {
+    "@vercel/ncc": "^0.38.1",
     "prettier": "^3.2.5",
     "standard-version": "^9.5.0",
     "typescript": "^5.4.5",
