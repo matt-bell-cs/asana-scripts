@@ -7,7 +7,7 @@ async function run() {
     const asanaWorkspaceId = core.getInput('asana-workspace-id')
     const branch = core.getInput('branch')
     const commit = core.getInput('commit')
-    const ticketAction = core.getInput('ticket-action')
+    const ticketAction = core.getInput('ticket-section')
 
     const asanaClient = new AsanaClient(asanaAccessToken, asanaWorkspaceId)
 
