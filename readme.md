@@ -36,13 +36,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Update Asana task
-        uses: matt-bell-cs/asana-scripts@v1
+        uses: matt-bell-cs/asana-scripts@v0.0.2
         with:
           asana-access-token: ${{ secrets.ASANA_ACCESS_TOKEN }}
           asana-workspace-id: ${{ secrets.CULTURE_SUITE_ASANA_WORKSPACE_ID }}
           branch: ${{ github.ref }}
           commit: ${{ github.event.head_commit.message }}
-          ticket-action: ${{ github.event.action == 'opened' && 'code review' || github.event.action == 'closed' && 'complete' || 'in progress' }}
+          ticket-section: ${{ github.event.action == 'opened' && 'code review' || github.event.action == 'closed' && 'complete' || 'in progress' }}
 ```
 
 <!-- @todo running the app, bundling a new release -->
