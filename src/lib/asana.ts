@@ -11,13 +11,13 @@ class AsanaClient {
   private sectionsApiInstance: asana.SectionsApi
   private workspaceId: string
 
-  constructor(asanaAccessToken: string) {
+  constructor(asanaAccessToken: string, asanaWorkspaceId: string) {
     this.client = asana.ApiClient.instance
     let token = this.client.authentications['token']
     token.accessToken = asanaAccessToken
     this.tasksApiInstance = new asana.TasksApi()
     this.sectionsApiInstance = new asana.SectionsApi()
-    this.workspaceId = '1199888618790669'
+    this.workspaceId = asanaWorkspaceId //'1199888618790669'
   }
 
   private async getTask(gid: string) {

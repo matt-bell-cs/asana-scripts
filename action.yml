@@ -1,0 +1,21 @@
+name: 'Asana Task Updater'
+description: 'Updates Asana tasks based on branch and commit data'
+inputs:
+  asana-access-token:
+    description: 'Asana access token'
+    required: true
+  asana-workspace-id:
+    description: 'Asana workspace id - https://app.asana.com/api/1.0/workspaces'
+    required: true
+  branch:
+    description: 'Branch name'
+    required: true
+  commit:
+    description: 'Commit message'
+    required: true
+  ticket-section:
+    description: 'Which project section to move the ticket into (in progress, pr opened, pr closed)'
+    required: true
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

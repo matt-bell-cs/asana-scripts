@@ -21,9 +21,17 @@ export default ({ mode }) => {
     },
     build: {
       lib: {
-        name: 'asana',
-        entry: resolve(__dirname, 'src/lib/asana.ts'),
-        formats: ['es'],
+        entry: resolve(__dirname, 'src/lib/index.ts'),
+        fileName: 'index',
+        formats: ['cjs'],
+      },
+      outDir: 'dist',
+      emptyOutDir: true,
+      rollupOptions: {
+        external: ['@actions/core'],
+        output: {
+          entryFileNames: '[name].js',
+        },
       },
     },
   })

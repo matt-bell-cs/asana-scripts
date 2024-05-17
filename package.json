@@ -1,11 +1,18 @@
 {
-  "name": "asana-scripts",
-  "version": "1.0.0",
+  "name": "asana-task-updater",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --debug",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "release": "standard-version --skip.changelog && git push --follow-tags"
   },
@@ -14,12 +21,9 @@
     "url": "git+https://github.com/matt-bell-cs/asana-scripts.git"
   },
   "author": "Matt Bell",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/matt-bell-cs/asana-scripts/issues"
-  },
   "homepage": "https://github.com/matt-bell-cs/asana-scripts#readme",
   "dependencies": {
+    "@actions/core": "^1.10.1",
     "asana": "^3.0.4",
     "vite": "^5.2.11"
   },
